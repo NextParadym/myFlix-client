@@ -22897,7 +22897,12 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
-//import spiritedAway from '../../images/spiritedAway.jpg'
+var _spiritedAwayJpg = require("../../images/spiritedAway.jpg");
+var _spiritedAwayJpgDefault = parcelHelpers.interopDefault(_spiritedAwayJpg);
+var _harryPotterAndTheSorcerersStoneJpg = require("../../images/harryPotterAndTheSorcerersStone.jpg");
+var _harryPotterAndTheSorcerersStoneJpgDefault = parcelHelpers.interopDefault(_harryPotterAndTheSorcerersStoneJpg);
+var _theLionKingJpg = require("../../images/theLionKing.jpg");
+var _theLionKingJpgDefault = parcelHelpers.interopDefault(_theLionKingJpg);
 // Exposing a component makes it available for use by other components
 // The class MainView extends React.Component {...}.creates the MainView component.
 //let imgPath = './images';
@@ -22912,11 +22917,10 @@ let movies = [
             Name: "Hayao Miyazaki"
         },
         Description: "A girl and her family visit an amusement park. The parents of the girl are turned into pigs, and she is kidnapped by ghosts. ",
-        //ImagePath:  "/images/spiritedAway.jpg" },
-        ImagePath: "https://images-na.ssl-images-amazon.com/images/I/71+0HKU5mJL.jpg"
+        ImagePath: _spiritedAwayJpgDefault.default
     },
-    //ImagePath: imgPath +  "spiritedAway.jpg"},
-    //import spiritedAway from '../../images/spiritedAway.jpg'
+    //ImagePath:  "/images/spiritedAway.jpg" },
+    //ImagePath:"https://images-na.ssl-images-amazon.com/images/I/71+0HKU5mJL.jpg"},
     {
         _id: "6197b6235ba878fd0afa7412",
         Title: "Harry Potter and the Sorcerer's Stone",
@@ -22927,15 +22931,7 @@ let movies = [
             Name: "Chris Columbus"
         },
         Description: "An eleven-year old boy goes to wizard school for a year and doesn't cast a single spell onscreen the entire time.",
-        ImagePath: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-            src: "/images/spiritedAway.jpg",
-            alt: "",
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 37
-            },
-            __self: undefined
-        })
+        ImagePath: _harryPotterAndTheSorcerersStoneJpgDefault.default
     },
     {
         _id: "6197bc855ba878fd0afa7418 ",
@@ -22947,17 +22943,8 @@ let movies = [
             Name: "Rob Minkoff"
         },
         Description: "Animated lions perform a completely faithful rendition of Hamlet.",
-        //ImagePath: imgPath +  "theLionKing.jpg"}
-        ImagePath: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-            src: "/images/spiritedAway.jpg",
-            alt: "",
-            __source: {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 48
-            },
-            __self: undefined
-        })
-    }, 
+        ImagePath: _theLionKingJpgDefault.default
+    }
 ];
 class MainView extends _reactDefault.default.Component {
     constructor(){
@@ -22981,7 +22968,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 72
+                lineNumber: 69
             },
             __self: this,
             children: "The list is empty!"
@@ -22990,7 +22977,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 74
+                lineNumber: 71
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -23000,7 +22987,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 76
+                    lineNumber: 73
                 },
                 __self: this
             }) : movies1.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -23010,7 +22997,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 78
+                        lineNumber: 75
                     },
                     __self: this
                 }, movie._id)
@@ -23025,7 +23012,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"6gr8C","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fhD2h","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr"}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"6gr8C","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fhD2h","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../../images/spiritedAway.jpg":"3oJrS","../../images/harryPotterAndTheSorcerersStone.jpg":"fcP7S","../../images/theLionKing.jpg":"jKYgG"}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23241,6 +23228,50 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"6gr8C","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fhD2h"}],"jUTZ8":[function() {},{}]},["iQWUo","8LBy5","dLPEP"], "dLPEP", "parcelRequireaec4")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"6gr8C","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"fhD2h"}],"3oJrS":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "spiritedAway.49a270b6.jpg";
+
+},{"./helpers/bundle-url":"6DEn5"}],"6DEn5":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"fcP7S":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "harryPotterAndTheSorcerersStone.c1e3f51c.jpg";
+
+},{"./helpers/bundle-url":"6DEn5"}],"jKYgG":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "theLionKing.a65b9dec.jpg";
+
+},{"./helpers/bundle-url":"6DEn5"}],"jUTZ8":[function() {},{}]},["iQWUo","8LBy5","dLPEP"], "dLPEP", "parcelRequireaec4")
 
 //# sourceMappingURL=index.6701a6e1.js.map
