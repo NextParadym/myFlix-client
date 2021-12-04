@@ -22897,9 +22897,10 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
+//import spiritedAway from '../../images/spiritedAway.jpg'
 // Exposing a component makes it available for use by other components
 // The class MainView extends React.Component {...}.creates the MainView component.
-let imgPath = './img/';
+//let imgPath = './images';
 let movies = [
     {
         _id: "6197b6235ba878fd0afa7411",
@@ -22911,10 +22912,13 @@ let movies = [
             Name: "Hayao Miyazaki"
         },
         Description: "A girl and her family visit an amusement park. The parents of the girl are turned into pigs, and she is kidnapped by ghosts. ",
-        ImagePath: imgPath + "spiritedAway.jpg"
+        //ImagePath:  "/images/spiritedAway.jpg" },
+        ImagePath: "https://images-na.ssl-images-amazon.com/images/I/71+0HKU5mJL.jpg"
     },
+    //ImagePath: imgPath +  "spiritedAway.jpg"},
+    //import spiritedAway from '../../images/spiritedAway.jpg'
     {
-        _id: "6197b6235ba878fd0afa7411",
+        _id: "6197b6235ba878fd0afa7412",
         Title: "Harry Potter and the Sorcerer's Stone",
         Genre: {
             Name: "Family"
@@ -22923,7 +22927,15 @@ let movies = [
             Name: "Chris Columbus"
         },
         Description: "An eleven-year old boy goes to wizard school for a year and doesn't cast a single spell onscreen the entire time.",
-        ImagePath: imgPath + "harryPotterAndTheSorcerersStone.jpg"
+        ImagePath: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+            src: "/images/spiritedAway.jpg",
+            alt: "",
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 37
+            },
+            __self: undefined
+        })
     },
     {
         _id: "6197bc855ba878fd0afa7418 ",
@@ -22935,8 +22947,17 @@ let movies = [
             Name: "Rob Minkoff"
         },
         Description: "Animated lions perform a completely faithful rendition of Hamlet.",
-        ImagePath: imgPath + "theLionKing.jpg"
-    }
+        //ImagePath: imgPath +  "theLionKing.jpg"}
+        ImagePath: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+            src: "/images/spiritedAway.jpg",
+            alt: "",
+            __source: {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 48
+            },
+            __self: undefined
+        })
+    }, 
 ];
 class MainView extends _reactDefault.default.Component {
     constructor(){
@@ -22960,7 +22981,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 64
+                lineNumber: 72
             },
             __self: this,
             children: "The list is empty!"
@@ -22969,7 +22990,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 66
+                lineNumber: 74
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -22979,7 +23000,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 68
+                    lineNumber: 76
                 },
                 __self: this
             }) : movies1.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -22989,7 +23010,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 70
+                        lineNumber: 78
                     },
                     __self: this
                 }, movie._id)
