@@ -5,13 +5,20 @@ let tempHeightStyle = {
   height: '500px'
 };
 export class MovieView extends React.Component {
+  keypressCallback(event) {
+    console.log(event.key);
+  }
+
+  componentDidMount() {
+    document.addEventListener('keypress', this.keypressCallback);
+  }
 
   render() {
     const { movie, onBackClick } = this.props;
     return (
       <div className='movie-view'>
         <div className="movie-poster">
-          <img src={movie.ImagePath} style={tempHeightStyle} />
+          <img src={movie.ImagePath} style={tempHeightStyle} crossOrigin="anonymous" />
         </div>
         <div className="movie-title">
           <span className="label">Title: </span>
