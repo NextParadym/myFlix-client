@@ -1,83 +1,83 @@
 // a requirement for creating a component
 //blueprint for creating new components.
 import React from 'react';
+import axios from 'axios';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-import spiritedAway from '../../images/spiritedAway.jpg';
-import harryPotterAndTheSorcerersStone from '../../images/harryPotterAndTheSorcerersStone.jpg';
-import theLionKing from '../../images/theLionKing.jpg';
+import { LoginView } from '../login-view/login-view';
+
 // Exposing a component makes it available for use by other components
 // The class MainView extends React.Component {...}.creates the MainView component.
 
-//let imgPath = './images';
-
-let  movies = [
-  { _id :   "6197b6235ba878fd0afa7411", 
-  Title:   "Spirited Away ", 
-  Genre:  {
-    Name : "Animated"
-  },
-  Director : {
-    Name: "Hayao Miyazaki"},
-  Description:   "A girl and her family visit an amusement park. The parents of the girl are turned into pigs, and she is kidnapped by ghosts. ",
-  ImagePath : spiritedAway},
-  //ImagePath:  "/images/spiritedAway.jpg" },
-  //ImagePath:"https://images-na.ssl-images-amazon.com/images/I/71+0HKU5mJL.jpg"},
-
-  { _id :   "6197b6235ba878fd0afa7412", 
-  Title:  "Harry Potter and the Sorcerer's Stone", 
-  Genre:  {
-    Name : "Family"
-  },
-  Director : {
-    Name: "Chris Columbus"},
-  Description: "An eleven-year old boy goes to wizard school for a year and doesn't cast a single spell onscreen the entire time.", 
-  ImagePath : harryPotterAndTheSorcerersStone },
-
-  { _id :   "6197bc855ba878fd0afa7418 ", 
-  Title: "The Lion King", 
-  Genre:  {
-    Name : "Animated",
-  },
-  Director : {
-    Name: "Rob Minkoff"},
-  Description: "Animated lions perform a completely faithful rendition of Hamlet.",  
-  ImagePath: theLionKing}
-]
+let imgPath = './img';
 
   export default class MainView extends React.Component {
 
-        constructor() {
-          super();
-          this.state = {
-            movies: movies,
-            selectedMovie: null
-          };
+    constructor() {
+      super();
+  // Initial state is set to null
+      this.state = {
+        movies: [],
+        selectedMovie: null,
+        user: null
+      }
+    } 
+    
+    componentDidMount(){
+      axios.get('https://murmuring-bastion-72555.herokuapp.com/movies')
+            .then(response => {
+              this.setState({
+                movies: response.data
+              });
+            })
+ 
+            .catch(error => {
+              console.log(error);
+            });
+
         }
-      
-  setSelectedMovie(newSelectedMovie) {
+        
+    /*When a movie is clicked, this function is invoked and updates 
+    the state of the `selectedMovie` *property to that movie*/
+  
+    setSelectedMovie(newSelectedMovie) {
     this.setState({
       selectedMovie: newSelectedMovie
     });
   }
+
+  /* When a user successfully logs in, this
+   function updates the `user` property in state to that *particular user*/
+
+  onLoggedIn(user) {
+    this.setState({
+      user
+    });
+  }
+
+
   //returns the visual representation of the component
   // a requirement for creating a component
 //blueprint for creating new components.
 
-  render() {
-    const { movies, selectedMovie } = this.state;
-    if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
-    return (
-      <div className="main-view">
-        {selectedMovie
-          ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-          : movies.map(movie => (
-            <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
-          ))
-        }
-      </div>
-    );
-  }
+render() {
+  const { movies, selectedMovie, user } = this.state;
+  /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
+  if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+
+  // Before the movies have been loaded
+  if (movies.length === 0) return <div className="main-view" />;
+
+  return (
+    <div className="main-view">
+      {/*If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all *movies will be returned*/}
+      {selectedMovie
+        ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+        : movies.map(movie => (
+          <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }}/>
+      ))
+      }
+    </div>
+  );
 }
-
-
+}
