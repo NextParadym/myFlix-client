@@ -1,5 +1,5 @@
 // a requirement for creating a component
-//blueprint for creating new components.
+//blueprint for creating new <components className=""></components>
 import React from 'react';
 import axios from 'axios';
 import { MovieCard } from '../movie-card/movie-card';
@@ -56,8 +56,8 @@ let imgPath = './img';
   }
 
 
-  //returns the visual representation of the component
-  // a requirement for creating a component
+//returns the visual representation of the component
+// a requirement for creating a component
 //blueprint for creating new components.
 
 render() {
@@ -65,7 +65,7 @@ render() {
   /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details are *passed as a prop to the LoginView*/
   if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
-  // Before the movies have been loaded
+  // This is before the movies have been loaded
   if (movies.length === 0) return <div className="main-view" />;
 
   return (
