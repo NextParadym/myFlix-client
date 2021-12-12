@@ -22892,7 +22892,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxRuntime = require("react/jsx-runtime");
 // a requirement for creating a component
-//blueprint for creating new components.
+//blueprint for creating new <components className=""></components>
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
@@ -22948,7 +22948,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __self: this
         }));
-        // Before the movies have been loaded
+        // This is before the movies have been loaded
         if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
