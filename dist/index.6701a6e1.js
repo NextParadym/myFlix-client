@@ -22897,9 +22897,13 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+//import the login view into the main-view
 var _loginView = require("../login-view/login-view");
+//import the registration view into the main-view
 var _registrationView = require("../registration-view/registration-view");
+//import the movie-card view into the main-view
 var _movieCard = require("../movie-card/movie-card");
+//import the movie-view into the main-view
 var _movieView = require("../movie-view/movie-view");
 // Exposing a component makes it available for use by other components
 // The class MainView extends React.Component {...}.creates the MainView component.
@@ -22935,6 +22939,18 @@ class MainView extends _reactDefault.default.Component {
             user
         });
     }
+    //When a user successfully registers
+    onRegistration(register) {
+        this.setState({
+            register
+        });
+    }
+    /* When a user successfully logs in, this function updates the `user`
+  property in state to that *particular user*/ onLoggedIn(user) {
+        this.setState({
+            user
+        });
+    }
     //returns the visual representation of the component
     // a requirement for creating a component
     //blueprint for creating new components.
@@ -22945,7 +22961,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 68
+                lineNumber: 85
             },
             __self: this
         }));
@@ -22954,16 +22970,16 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 72
+                lineNumber: 89
             },
             __self: this
         }));
-        // This is before the movies have been loaded
+        // Before the movies have been loaded
         if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 75
+                lineNumber: 92
             },
             __self: this
         }));
@@ -22971,7 +22987,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 78
+                lineNumber: 95
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -22981,7 +22997,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 81
+                    lineNumber: 98
                 },
                 __self: this
             }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -22991,7 +23007,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 83
+                        lineNumber: 100
                     },
                     __self: this
                 }, movie._id)
