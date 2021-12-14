@@ -22891,7 +22891,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxRuntime = require("react/jsx-runtime");
-// a requirement for creating a component
+//A requirement for creating a component
 //blueprint for creating new <components className=""></components>
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -22905,9 +22905,6 @@ var _registrationView = require("../registration-view/registration-view");
 var _movieCard = require("../movie-card/movie-card");
 //import the movie-view into the main-view
 var _movieView = require("../movie-view/movie-view");
-// Exposing a component makes it available for use by other components
-// The class MainView extends React.Component {...}.creates the MainView component.
-let imgPath = './img';
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -22915,7 +22912,8 @@ class MainView extends _reactDefault.default.Component {
         this.state = {
             movies: [],
             selectedMovie: null,
-            user: null
+            user: null,
+            register: null
         };
     }
     componentDidMount() {
@@ -22928,13 +22926,13 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     /*When a movie is clicked, this function is invoked and updates 
-    the state of the `selectedMovie` *property to that movie*/ setSelectedMovie(newSelectedMovie) {
+  the state of the `selectedMovie` *property to that movie*/ setSelectedMovie(newSelectedMovie) {
         this.setState({
             selectedMovie: newSelectedMovie
         });
     }
     /* When a user successfully logs in, this
-   function updates the `user` property in state to that *particular user*/ onLoggedIn(user) {
+  function updates the `user` property in state to that *particular user*/ onLoggedIn(user) {
         this.setState({
             user
         });
@@ -22946,7 +22944,7 @@ class MainView extends _reactDefault.default.Component {
         });
     }
     /* When a user successfully logs in, this function updates the `user`
-  property in state to that *particular user*/ onLoggedIn(user) {
+property in state to that *particular user*/ onLoggedIn(user) {
         this.setState({
             user
         });
@@ -22961,7 +22959,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 85
+                lineNumber: 77
             },
             __self: this
         }));
@@ -22970,7 +22968,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 89
+                lineNumber: 80
             },
             __self: this
         }));
@@ -22979,7 +22977,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 92
+                lineNumber: 83
             },
             __self: this
         }));
@@ -22987,7 +22985,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 95
+                lineNumber: 86
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -22997,7 +22995,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 98
+                    lineNumber: 89
                 },
                 __self: this
             }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -23007,7 +23005,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 100
+                        lineNumber: 91
                     },
                     __self: this
                 }, movie._id)
@@ -23047,7 +23045,7 @@ class MovieCard extends _reactDefault.default.Component {
             className: "movie-card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 9
+                lineNumber: 8
             },
             __self: this,
             children: movie.Title
@@ -23772,7 +23770,7 @@ parcelHelpers.export(exports, "MovieView", ()=>MovieView
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-// This is temporary. Remove this as soon as you add an external style sheet.
+//This is temporary. Remove this as soon as you add an external style sheet.
 let tempHeightStyle = {
     height: '500px'
 };
