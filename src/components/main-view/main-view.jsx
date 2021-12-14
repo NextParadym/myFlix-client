@@ -25,7 +25,9 @@ let imgPath = './img';
       this.state = {
         movies: [],
         selectedMovie: null,
-        user: null
+        user: null,
+        register: null,
+
       }
     } 
     
