@@ -22739,7 +22739,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxRuntime = require("react/jsx-runtime");
-//real -a requirement for creating a component
+//r-A requirement for creating a component
 //blueprint for creating new <components className=""></components>
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);

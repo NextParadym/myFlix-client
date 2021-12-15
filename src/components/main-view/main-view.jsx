@@ -1,4 +1,4 @@
-//real -a requirement for creating a component
+//r-A requirement for creating a component
 //blueprint for creating new <components className=""></components>
 import React from 'react';
 import axios from 'axios';
