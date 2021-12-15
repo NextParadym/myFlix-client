@@ -1,4 +1,4 @@
-//A requirement for creating a component
+//real -a requirement for creating a component
 //blueprint for creating new <components className=""></components>
 import React from 'react';
 import axios from 'axios';
@@ -10,6 +10,9 @@ import { RegistrationView } from "../registration-view/registration-view";
 import { MovieCard } from '../movie-card/movie-card';
 //import the movie-view into the main-view
 import { MovieView } from '../movie-view/movie-view';
+
+// Exposing a component makes it available for use by other components
+// The class MainView extends React.Component {...}.creates the MainView component.
 
 // Exposing a component makes it available for use by other components
 // The class MainView extends React.Component {...}.creates the MainView component.
@@ -61,14 +64,6 @@ onRegistration(register) {
   });
 }
 
-/* When a user successfully logs in, this function updates the `user`
-property in state to that *particular user*/
-onLoggedIn(user) {
-  this.setState({
-    user
-  });
-}
-
 //returns the visual representation of the component
 // a requirement for creating a component
 //blueprint for creating new components.
@@ -83,15 +78,14 @@ render() {
   if (movies.length === 0) return <div className="main-view" />;
 
   return (
-    <div className="main-view">
-      {/*If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all *movies will be returned*/}
-      {selectedMovie
-        ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-        : movies.map(movie => (
-          <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie) }}/>
-      ))
-      }
-    </div>
+  <div className="main-view">
+     {/*If the state of `selectedMovie` is not null, that selected movie will be returned otherwise, all *movies will be returned*/}
+    {selectedMovie? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+    : movies.map(movie => (
+      <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie) }}/>))
+    }
+  </div>
   );
+
 }
 }
