@@ -37723,11 +37723,19 @@ class MovieCard extends _reactDefault.default.Component {
                                             __self: this,
                                             children: movie.Title
                                         }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Text, {
+                                            __source: {
+                                                fileName: "src/components/movie-card/movie-card.jsx",
+                                                lineNumber: 21
+                                            },
+                                            __self: this,
+                                            children: movie.Description
+                                        }),
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Subtitle, {
                                             className: "mb-2 text-muted",
                                             __source: {
                                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                                lineNumber: 21
+                                                lineNumber: 22
                                             },
                                             __self: this,
                                             children: movie.ReleaseYear
@@ -37738,7 +37746,7 @@ class MovieCard extends _reactDefault.default.Component {
                                             ,
                                             __source: {
                                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                                lineNumber: 22
+                                                lineNumber: 23
                                             },
                                             __self: this,
                                             children: "Detail"
