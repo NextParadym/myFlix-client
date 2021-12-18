@@ -24,7 +24,7 @@ export default class MainView extends React.Component {
       movies: [],
       selectedMovie: null,
       user: null,
-      register: null,
+      register: null
     }
   } 
     
@@ -60,7 +60,7 @@ export default class MainView extends React.Component {
 //When a user successfully registers
 onRegistration(register) {
   this.setState({
-    register,
+    register
   });
 }
 
