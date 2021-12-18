@@ -26387,7 +26387,7 @@ function RegistrationView(props) {
     const [Birthday, setBirthday] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log(username, password, email, birthday);
+        console.log(username, password, email, Birthday);
         /* Send a request to the server for authentication */ /* then call props on registored user(username) */ props.onRegistration(username);
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
