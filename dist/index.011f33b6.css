@@ -34,10 +34,20 @@
   margin: 50px;
 }
 
-.cardImage {
-  width: 100% !important;
-  height: 200px !important;
-  object-fit: cover;
+.movieCard {
+  width: 100%;
+  margin: 50px;
+}
+
+.movie-title,
+.movie-description,
+.movie-genre,
+.movie-director,
+.movie-actors,
+.movie-year {
+  color: white !important;
+  font-size: 20px;
+  font-weight: 400;
 }
 * {
   box-sizing: border-box;

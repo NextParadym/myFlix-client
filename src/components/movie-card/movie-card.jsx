@@ -12,8 +12,7 @@ export class MovieCard extends React.Component {
     return (
       <Container className="movieContainer">
         <Row>
-          <Col>
-            <CardGroup>
+          <Col><CardGroup style = {{ width : '20rem', height: '45rem'}}>
               <Card className="movieCard text-center" >
                 <Card.Img className="cardImage" variant="top" src={movie.ImagePath} />
                 <Card.Body>

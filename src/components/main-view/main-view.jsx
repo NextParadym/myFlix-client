@@ -27,7 +27,7 @@ export default class MainView extends React.Component {
       register: null
     }
   } 
-    
+
   componentDidMount() {
     axios.get('https://murmuring-bastion-72555.herokuapp.com/movies')
     .then(response => {
@@ -40,7 +40,7 @@ export default class MainView extends React.Component {
       console.log(error);
     });
   }
-        
+
   /*When a movie is clicked, this function is invoked and updates 
   the state of the `selectedMovie` *property to that movie*/
   setSelectedMovie(newSelectedMovie) {
@@ -82,7 +82,7 @@ render() {
   return (
   <div className="main-view"><Navbar bg="navColor" variant="dark" expand="lg">
               <Container fluid>
-                <Navbar.Brand href="#home">myComedylix</Navbar.Brand>
+                <Navbar.Brand href="#home">myComedyFlix</Navbar.Brand>
                 <Nav className="me-auto">
                   <Nav.Link href="#home">Movies</Nav.Link>
                   <Nav.Link href="#user">Profile</Nav.Link>
@@ -115,6 +115,6 @@ render() {
             </div>
 </div>
   );
-  
+
   }
 }
