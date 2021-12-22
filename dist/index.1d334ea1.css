@@ -1,0 +1,111 @@
+.loginNavbar {
+  background: #162b48;
+}
+
+html,
+body,
+#loginCard > div {
+  background: #800080 !important;
+  height: 100%;
+}
+
+html,
+body,
+#loginContainer > div {
+  background: #800080 !important;
+  height: 150%;
+}
+
+body {
+  font-family: "Teko", sans-serif !important;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+
+.registerContainer {
+  background: #800080;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg-navColor {
+  background: #800080;
+}
+
+.registerCard {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  background: white;
+  color: black;
+}
+
+.registerButton {
+  width: 100%;
+  display: block;
+}
+.movieContainer {
+  display: inline-block;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+}
+
+.movieCard {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 50px;
+  height: 570px;
+  justify-content: center;
+}
+
+.movie-title,
+.movie-description,
+.movie-genre,
+.movie-director,
+.movie-actors,
+.movie-year {
+  color: white !important;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 580px) {
+  .movieCard {
+    width: 80%;
+    height: 520px;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+.main-view {
+  font-family: "Fira Sans", sans-serif;
+  background: #800080;
+  width: 100%;
+  display: inline-block;
+}
+
+.bg-navColor {
+  background: #000;
+}
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+.app-container {
+  background-color: #800080;
+  font-family: "Fira Sans", sans-serif;
+}
+/*# sourceMappingURL=index.1d334ea1.css.map */

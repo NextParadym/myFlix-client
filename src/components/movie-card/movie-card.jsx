@@ -10,14 +10,19 @@ export class MovieCard extends React.Component {
     const { movie, onMovieClick  } = this.props;
 
     return (
-      <Container className="movieContainer">
+      <Container fluid="md" className="movieContainer">
         <Row>
-          <Col><CardGroup style = {{ width : '20rem', height: '45rem'}}>
+          <Col> 
+            <CardGroup style = {{ width : '20rem', height: '45rem'}}>
               <Card className="movieCard text-center" >
-                <Card.Img className="cardImage" variant="top" src={movie.ImagePath} />
+                <Card.Img className="cardImage" variant="top" src={movie.ImagePath} crossOrigin="anonymous" />
                 <Card.Body>
                   <Card.Title>{movie.Title}</Card.Title>
-                  <Card.Text>{movie.Description}</Card.Text>
+                  <Row>
+                    <Col md={{ span: 9, offset: 1 }}>
+                      <Card.Text class="text-truncate">{movie.Description}</Card.Text>
+                    </Col>
+                  </Row>
                   <Card.Subtitle className="mb-2 text-muted">{movie.ReleaseYear}</Card.Subtitle>
                   <Button variant="secondary" onClick={() => onMovieClick(movie)} >Detail</Button>
                 </Card.Body>
