@@ -13,7 +13,7 @@ export class MovieCard extends React.Component {
       <Container fluid="md" className="movieContainer">
         <Row>
           <Col> 
-            <CardGroup style = {{ width : '20rem', height: '45rem'}}>
+            <CardGroup style = {{ width : '20rem', height: '37rem'}}>
               <Card className="movieCard text-center" >
                 <Card.Img className="cardImage" variant="top" src={movie.ImagePath} crossOrigin="anonymous" />
                 <Card.Body>
