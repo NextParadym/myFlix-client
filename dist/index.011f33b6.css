@@ -26,9 +26,15 @@
   display: block;
 }
 .movieContainer {
-  display: inline-block;
+  display: block;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto;
+}
+
+.cardImage {
+  width: 570px;
+  height: 570px;
+  justify-content: center;
 }
 
 .movieCard {
@@ -37,8 +43,9 @@
   gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 50px;
-  height: 570px;
+  height: 500px;
   justify-content: center;
+  overflow-x: hidden !important;
 }
 
 .movie-title,
@@ -52,10 +59,17 @@
   font-weight: 400;
 }
 
+.card-img-top {
+  width: 500%;
+  height: 35vw;
+  object-fit: cover;
+}
+
 @media only screen and (max-width: 580px) {
   .movieCard {
     width: 80%;
-    height: 520px;
+    height: 500px;
+    margin: 80%;
   }
 }
 * {
