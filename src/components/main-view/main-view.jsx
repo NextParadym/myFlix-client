@@ -101,9 +101,8 @@ render() {
                     </Row>
                   )
                   : (
-                    <Row className="justify-content-lg-center">
-                      { movies.map(movie => (
-                        <Col lg={3} md={4} sm={6} >
+                    <Row>{ movies.map(movie => (
+                         <Col lg={3} md={6} sm={10} xs={12} className='mb-4 h-100 mx-auto'>
                           <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
                         </Col>
                         ))
