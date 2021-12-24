@@ -10,10 +10,7 @@ export class MovieCard extends React.Component {
     const { movie, onMovieClick  } = this.props;
 
     return (
-      <Container fluid="md" className="movieContainer">
-        <Row>
-          <Col> 
-            <CardGroup style = {{ width : '20rem', height: '37rem'}}>
+      <CardGroup style={{xs: {height: '300px'}, sm: {height: '550px'}}} >
               <Card className="movieCard text-center" >
                 <Card.Img className="cardImage" variant="top" src={movie.ImagePath} crossOrigin="anonymous" />
                 <Card.Body>
@@ -28,9 +25,6 @@ export class MovieCard extends React.Component {
                 </Card.Body>
               </Card>
             </CardGroup>
-          </Col>
-        </Row>
-      </Container>
     );
   }
 }
