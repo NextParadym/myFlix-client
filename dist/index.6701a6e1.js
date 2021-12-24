@@ -22942,7 +22942,6 @@ class MainView extends _reactDefault.default.Component {
                                 })
                             })
                         }) : /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                            className: "justify-content-lg-center",
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 104
@@ -22950,11 +22949,13 @@ class MainView extends _reactDefault.default.Component {
                             __self: this,
                             children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                     lg: 3,
-                                    md: 4,
-                                    sm: 6,
+                                    md: 6,
+                                    sm: 10,
+                                    xs: 12,
+                                    className: "mb-4 h-100 mx-auto",
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 106
+                                        lineNumber: 105
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -22964,7 +22965,7 @@ class MainView extends _reactDefault.default.Component {
                                         },
                                         __source: {
                                             fileName: "src/components/main-view/main-view.jsx",
-                                            lineNumber: 107
+                                            lineNumber: 106
                                         },
                                         __self: this
                                     }, movie._id)
@@ -37719,123 +37720,104 @@ var _movieCardScss = require("./movie-card.scss");
 class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie , onMovieClick  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
-            fluid: "md",
-            className: "movieContainer",
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.CardGroup, {
+            style: {
+                xs: {
+                    height: '300px'
+                },
+                sm: {
+                    height: '550px'
+                }
+            },
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 13
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+                className: "movieCard text-center",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
                     lineNumber: 14
                 },
                 __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                    __source: {
-                        fileName: "src/components/movie-card/movie-card.jsx",
-                        lineNumber: 15
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.CardGroup, {
-                        style: {
-                            width: '20rem',
-                            height: '37rem'
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
+                        className: "cardImage",
+                        variant: "top",
+                        src: movie.ImagePath,
+                        crossOrigin: "anonymous",
+                        __source: {
+                            fileName: "src/components/movie-card/movie-card.jsx",
+                            lineNumber: 15
                         },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
                             lineNumber: 16
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
-                            className: "movieCard text-center",
-                            __source: {
-                                fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 17
-                            },
-                            __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
-                                    className: "cardImage",
-                                    variant: "top",
-                                    src: movie.ImagePath,
-                                    crossOrigin: "anonymous",
-                                    __source: {
-                                        fileName: "src/components/movie-card/movie-card.jsx",
-                                        lineNumber: 18
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
+                                __source: {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 17
+                                },
+                                __self: this,
+                                children: movie.Title
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                __source: {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 18
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                    md: {
+                                        span: 9,
+                                        offset: 1
                                     },
-                                    __self: this
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                                     __source: {
                                         fileName: "src/components/movie-card/movie-card.jsx",
                                         lineNumber: 19
                                     },
                                     __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
-                                            __source: {
-                                                fileName: "src/components/movie-card/movie-card.jsx",
-                                                lineNumber: 20
-                                            },
-                                            __self: this,
-                                            children: movie.Title
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                            __source: {
-                                                fileName: "src/components/movie-card/movie-card.jsx",
-                                                lineNumber: 21
-                                            },
-                                            __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                                md: {
-                                                    span: 9,
-                                                    offset: 1
-                                                },
-                                                __source: {
-                                                    fileName: "src/components/movie-card/movie-card.jsx",
-                                                    lineNumber: 22
-                                                },
-                                                __self: this,
-                                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Text, {
-                                                    class: "text-truncate",
-                                                    __source: {
-                                                        fileName: "src/components/movie-card/movie-card.jsx",
-                                                        lineNumber: 23
-                                                    },
-                                                    __self: this,
-                                                    children: movie.Description
-                                                })
-                                            })
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Subtitle, {
-                                            className: "mb-2 text-muted",
-                                            __source: {
-                                                fileName: "src/components/movie-card/movie-card.jsx",
-                                                lineNumber: 26
-                                            },
-                                            __self: this,
-                                            children: movie.ReleaseYear
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                                            variant: "secondary",
-                                            onClick: ()=>onMovieClick(movie)
-                                            ,
-                                            __source: {
-                                                fileName: "src/components/movie-card/movie-card.jsx",
-                                                lineNumber: 27
-                                            },
-                                            __self: this,
-                                            children: "Detail"
-                                        })
-                                    ]
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Text, {
+                                        class: "text-truncate",
+                                        __source: {
+                                            fileName: "src/components/movie-card/movie-card.jsx",
+                                            lineNumber: 20
+                                        },
+                                        __self: this,
+                                        children: movie.Description
+                                    })
                                 })
-                            ]
-                        })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Subtitle, {
+                                className: "mb-2 text-muted",
+                                __source: {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 23
+                                },
+                                __self: this,
+                                children: movie.ReleaseYear
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                variant: "secondary",
+                                onClick: ()=>onMovieClick(movie)
+                                ,
+                                __source: {
+                                    fileName: "src/components/movie-card/movie-card.jsx",
+                                    lineNumber: 24
+                                },
+                                __self: this,
+                                children: "Detail"
+                            })
+                        ]
                     })
-                })
+                ]
             })
         }));
     }
