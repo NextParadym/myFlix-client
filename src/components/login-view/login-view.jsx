@@ -32,7 +32,7 @@ import React, { useState } from 'react';
                       <Form.Control 
                         type="text" 
                         onChange={e => setUsername(e.target.value)}
-                        placeholder ="Enter a username"/>
+                        placeholder ="Enter a username" value={username} onChange={e => setUsername(e.target.value)}/>
                   </Form.Group>
       
                   <Form.Group  controlId="formPassword">
@@ -40,7 +40,7 @@ import React, { useState } from 'react';
                       <Form.Control 
                         type="password" 
                         onChange={e => setPassword(e.target.value)} 
-                        placeholder ="Enter a password"/>
+                        placeholder ="Enter a password" value={password} onChange={e => setPassword(e.target.value)} />
                   </Form.Group>
 
                   <Button variant="primary" type="submit" onClick={handleSubmit}>
