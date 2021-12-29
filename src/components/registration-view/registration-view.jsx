@@ -10,14 +10,64 @@ export function RegistrationView(props) {
   const [ email, setEmail ] = useState('');
   const [ Birthday, setBirthday] = useState('');
 
+// Declare hook for each input
+const [ values, setValues] = useState ({
+  usernameErr: ' ',
+  passwordErr: ' ',
+  emailErr: ' ',
+  birthdayErr: ' '
+});
+const validate = () => {
+
+let isReq = true;
+if(username){
+  setValues({...values, usernameErr: ' Username is required'});
+  isReq = false;
+}
+
+if (!password){
+  setValues({...values,passwordErr:'Password is required'});
+  isReq = false;
+
+}else if (password.length<6){
+  setValues({...values, passwordErr: 'Password must be 6 charaters long'});
+  isReq = false;
+}
+
+
+if (!email){
+  setValues({...values,emailErr:'Email is required'});
+  isReq = false;
+}else if (email.indexOf('@')===-1){
+  setValues({...values, emailErr: 'email is invalid'});
+  isReq = false;
+}
+return isReq
+}
+
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email, Birthday);
-    /* Send a request to the server for authentication */
-    /* then call props on registored user(username) */
-    props.onRegistration(username);
-  };
-
+    const isReq = validate();
+    if (isReq)
+    axios.post(`https://murmuring-bastion-72555.herokuapp.com/users`, {
+      Username: Username,
+      Password: Password,
+      Email: Email,
+      Birthday: Birthday,
+  })
+      .then((response) => {
+          const data = response.data;
+          console.log(data);
+          alert("Registration Successful!");
+          window.open("/", "_self"); // the second arguement '_self' is necessary so that the page will open in the cureent tab
+      })
+      .catch(response=>{
+          console.error(response);
+          alert("unable to register!");
+      });
+};
   return (
 
     <Container fluid className="registerContainer" >
@@ -43,16 +93,20 @@ export function RegistrationView(props) {
                   <Form.Group>
                     <Form.Label>Username</Form.Label>
                     <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                  {values.usernameErr && <p>{values.usernameErr}</p>}
+                  
                   </Form.Group>
 
                   <Form.Group>
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                    {values.passwordErr && <p>{values.passwordErr}</p>}
                   </Form.Group>
 
                   <Form.Group>
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                    {values.emailErr && <p>{values.emailErr}</p>}
                   </Form.Group>
 
                   <Form.Group>
