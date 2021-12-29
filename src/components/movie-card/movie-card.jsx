@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './movie-card.scss';
 
 
@@ -15,6 +16,10 @@ export class MovieCard extends React.Component {
                 <Card.Img className="cardImage" variant="top" src={movie.ImagePath} crossOrigin="anonymous" />
                 <Card.Body>
                   <Card.Title>{movie.Title}</Card.Title>
+                  <Card.Text>{movie.Description}</Card.Text>
+                  <Link to={`/movies/${movie._id}`}>
+                    <Button variant="link">Open</Button>
+                  </Link>
                   <Row>
                     <Col md={{ span: 9, offset: 1 }}>
                       <Card.Text class="text-truncate">{movie.Description}</Card.Text>
