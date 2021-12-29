@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
-
+import { Link } from "react-router-dom";
 import './movie-card.scss';
 
 
@@ -21,7 +21,9 @@ export class MovieCard extends React.Component {
                     </Col>
                   </Row>
                   <Card.Subtitle className="mb-2 text-muted">{movie.ReleaseYear}</Card.Subtitle>
-                  <Button variant="secondary" onClick={() => onMovieClick(movie)} >Detail</Button>
+                  <Link to={`/movies/${movie._id}`}>
+                    <Button variant="link">Open</Button>
+                  </Link>
                 </Card.Body>
               </Card>
             </CardGroup>
@@ -38,7 +40,7 @@ MovieCard.propTypes = {
     }),
     Director: PropTypes.shape({
       Name: PropTypes.string.isRequired,
-      Bio: PropTypes.string.isRequired,
+      Description: PropTypes.string.isRequired,
       Birth: PropTypes.date,
       Death: PropTypes.date
     }),
