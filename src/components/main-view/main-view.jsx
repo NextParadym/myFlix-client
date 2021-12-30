@@ -1,8 +1,9 @@
 //r-A requirement for creating a component
 //blueprint for creating new <components className=""></components>
 import React from 'react';
+import React, {Fragment} from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Routes, Redirect } from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './main-view.scss';
 //import the login view into the main-view
 import { LoginView } from '../login-view/login-view';
@@ -113,15 +114,17 @@ onLoggedOut() {
 //blueprint for creating new components.
 
 render() {
-  const { movies, user, users } = this.state;
+  const { movies, user, users,register } = this.state;
   
   return (
-  <Router>
+    <Router>
+  
     <NavBarView />
     <br />
     <br />
     <br />
     <Row className="main-view justify-content-md-center">
+
         <Route exact path="/" render={() => {
             if (!user) return <Col> <LoginView onLoggedIn={(user) => this.onLoggedIn(user)}
             />
@@ -136,6 +139,7 @@ render() {
               ));}} 
         />
 
+
         <Route path="/movies/:movieId" render={({ match, history }) => {
                         if (!user) return <Col>
                             <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
@@ -145,6 +149,7 @@ render() {
                             <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
                         </Col>
         }} />
+
 
         <Route path="/directors/:name"
                         render={({ match, history }) => {
@@ -166,7 +171,8 @@ render() {
                             );
                         }}
         />
-                    
+
+  
         <Route path="/genres/:name"
                         render={({ match, history }) => {
                             if (!user)
@@ -187,6 +193,7 @@ render() {
                             );
         }}
         />
+
         <Route exact path="/users/:Username"
                         render={({ match, history }) => {
                             if (!user)
@@ -204,8 +211,10 @@ render() {
                                 />
                             );
       }}
-      /></Row>
-</Router>
+      />
+
+      </Row>
+    </Router>
   );
   }
 }
