@@ -7,7 +7,7 @@ import "./director-view.scss";
 
 export class DirectorView extends React.Component {
     render() {
-        const { Director, onBackClick, movies } = this.props;
+        const { Director, onBackClick, movies, movie } = this.props;
 
         return (
             <Container>
@@ -20,17 +20,40 @@ export class DirectorView extends React.Component {
                             <span className="value">{Director.Name}</span>
                         </div>
                         <div>
-                            <span className="label"> Description: </span>
-                            <span className="value">{Director.Description}</span>
+                            <span className="label">Bio: </span>
+                            <span className="value">{Director.Bio}</span>
                         </div>
                         <div>
                             <span className="label">Born: </span>
-                            <span className="value">{Director.Birthday}</span>
+                            <span className="value">{Director.Birth}</span>
                         </div>
                         <div>
                             <span className="label">Death: </span>
                             <span className="value">{Director.Death}</span>
                         </div>
+                        <Row className="director-movies text-center">
+                            <Col>
+                                <p>
+                                    <strong>{Director.Name}'s Movies</strong>
+                                </p>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="img-container text-center">
+                                {movies.map((m) => {
+                                    if (m.Director && m.Director.Name === Director.Name) {
+                                        return (
+                                            <Card.Img
+                                                className="movie-img"
+                                                variant="top"
+                                                key={m._id}
+                                                src={m.ImagePath}
+                                            />
+                                        );
+                                    }
+                                })}
+                            </Col>
+                        </Row>
                         <br />
                         <div className="backButton">
                             <Button size="md" variant="outline-primary" onClick={() => { onBackClick(null); }}>Back</Button>
@@ -45,8 +68,8 @@ export class DirectorView extends React.Component {
 DirectorView.proptypes = {
     Director: PropTypes.shape({
         Name: PropTypes.string.isRequired,
-        Description: PropTypes.string.isRequired,
-        Birthday: PropTypes.number,
+        Bio: PropTypes.string,
+        Birth: PropTypes.number,
         Death: PropTypes.number,
     }).isRequired,
 };

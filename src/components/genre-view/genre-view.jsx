@@ -1,25 +1,37 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+import { Container, Card, Button, Row, Col } from "react-bootstrap";
 
-// react-bootstap UI
-import Button from 'react-bootstrap/Button';
+import "./genre-view.scss";
 
-export function GenreView({ movie, onBackClick }) {
-    return (
-        <div className="genre-view">
-            <h1 style={{ fontWeight: 700 }}>{movie.Genre.Name}</h1>
-            <h4 className="m-4">{movie.Genre.Description}</h4>
-            <Button className="mt-5" variant="dark" size="md" onClick={() => onBackClick()}>Back</Button>
-        </div>
-    )
+export class GenreView extends React.Component {
+    render() {
+        const { Genre, onBackClick, movies } = this.props;
+
+        return (
+            <Container>
+                <br />
+                <Card align="center">
+                    <h4>{Genre.Name}</h4>
+                    <Card.Body>
+                        <div>
+                            <span className="label">Description: </span>
+                            <span className="value">{Genre.Description}</span>
+                        </div>
+                        <br />
+                        <div className="backButton">
+                            <Button size="md" variant="outline-primary" onClick={() => { onBackClick(null); }}>Back</Button>
+                        </div>
+                    </Card.Body>
+                </Card>
+            </Container>
+        );
+    }
 }
 
 GenreView.propTypes = {
-    movie: PropTypes.shape({
-        Genre: PropTypes.shape({
-            Name: PropTypes.string.isRequired,
-            Description: PropTypes.string.isRequired,
-        }).isRequired
+    Genre: PropTypes.shape({
+        Name: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
     }).isRequired,
-    onBackClick: PropTypes.func.isRequired
-}
+};
